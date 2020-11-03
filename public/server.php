@@ -6,7 +6,6 @@ require '../config.php';
 // выборка всего из бд по найденному урлу
 $sql = "SELECT * FROM companies WHERE url = '$url'";
 $sql2 = "SELECT * FROM categories WHERE url = '$url'";
-
 // создаем подключение
 $conn = new mysqli($servername, $username, $password, $dbname);
 // проверка подключения
