@@ -148,3 +148,7 @@
 <script type='text/javascript' src='js/custom/core.messages.js'></script>
 <script type='text/javascript' src='js/vendor/grid.layout/grid.layout.min.js'></script>
 <script type='text/javascript' src='js/vendor/jquery/core.min.js'></script>
+<script type='text/javascript' src='js/vendor/grid.layout/grid.layout.min.js'></script>
+<script type='text/javascript' src='js/vendor/prettyPhoto/jquery.prettyPhoto.min.js'></script>
+<script type='text/javascript' src='js/vendor/prettyPhoto/jquery.prettyPhoto.init.min.js'></script>
+<script type='text/javascript' src='js/vendor/swiper/swiper.js'></script>

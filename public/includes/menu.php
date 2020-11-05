@@ -54,7 +54,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="eda.html">Staff</a></li>
+                                    <li class="menu-item"><a href="stuff">Staff</a></li>
                                 </ul>
                             </nav>
 <!--                             <div class="search_wrap search_style_regular search_state_closed search_ajax">
