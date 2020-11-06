@@ -75,7 +75,7 @@
         <div class="top_panel_title top_panel_style_3 title_present breadcrumbs_present scheme_original">
             <div class="top_panel_title_inner top_panel_inner_style_3  title_present_inner breadcrumbs_present_inner">
                 <div class="content_wrap">
-                    <h1 class="page_title">Allan Ryan</h1>
+                    <h1 class="page_title"><?php echo $name; ?></h1>
                     <div class="breadcrumbs">
                         <a class="breadcrumbs_item home" href="index.html">Home</a>
                         <span class="breadcrumbs_delimiter"></span>
@@ -99,8 +99,8 @@
                                                 <div class="column-1_3 sc_column_item ">
                                                     <div class="single_image content_element sc_align_left">
                                                         <figure class="wrapper sc_figure">
-                                                            <a data-rel="prettyPhoto[rel-263-268261874]" href="images/370x370.jpg" target="_self" class="sc_single_image-wrapper sc_box_border_grey prettyphoto">
-                                                                <img class="sc_single_image-img " src="images/370x370.jpg" width="740" height="750" alt="" title="team-10" /></a>
+                                                            <a data-rel="prettyPhoto[rel-263-268261874]" href="https://zapis.kz<?php echo $avatarUrl; ?>" target="_self" class="sc_single_image-wrapper sc_box_border_grey prettyphoto">
+                                                                <img class="sc_single_image-img " src="https://zapis.kz<?php echo $avatarUrl; ?>" width="740" height="750" alt="" title="team-10" /></a>
                                                         </figure>
                                                     </div>
                                                 </div>
@@ -114,7 +114,7 @@
                                                             <p>
                                                                 Phone: <a href="tel:+1234568910">+1(234) 567 89 10</a> <br/>
                                                                 Email: <a href="mailto:name@mail.com">name@mail.com</a> <br/>
-                                                                Skype: namesurname
+                                                                Адрес: <?php echo $address; ?>
                                                             </p>
                                                         </div>
                                                     </div>
