@@ -2,9 +2,11 @@
 // конфигурационные данные
 require '../config.php';
 
+$urlKey = substr($_SERVER['REQUEST_URI'], 1);
 // ищем страницу в бд
 // выборка всего из бд по найденному урлу
-$sql = "SELECT * FROM companies WHERE url = '$url'";
+$sql = "SELECT * FROM pages WHERE urlKey = '$urlKey'";
+var_dump($sql);
 $sql2 = "SELECT * FROM categories WHERE url = '$url'";
 // создаем подключение
 $conn = new mysqli($servername, $username, $password, $dbname);

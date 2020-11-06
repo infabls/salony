@@ -1,4 +1,10 @@
 RewriteEngine on
+
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !^/csv.php.*$
+RewriteCond %{REQUEST_URI} !^/parser.php.*$
+RewriteCond %{REQUEST_URI} !^/downloader.php.*$
 RewriteCond %{REQUEST_URI} !^public
 RewriteRule ^(.*)$ public/$1 [L]
