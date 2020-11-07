@@ -28,19 +28,26 @@ for ($i=2; $i < $a; $i++) {
 	$urlkey = $data['data']['firm']['urlKey'];
 	$avatarurl = $data['data']['firm']['avatarUrl'];
 	$cityname = $data['data']['firm']['cityName'];
+	$description = $data['data']['firm']['description'];
+	$instagramProfile = $data['data']['firm']['instagramProfile'];
+	$averageRating = $data['data']['firm']['averageRating'];
+	$reviewCount = $data['data']['firm']['reviewCount'];
+	// проверка на количество номеров
+	$phoneNumbers = $data['data']['firm']['phoneNumbers'][0];
+
 
 	// добавление данных в таблицу
-	$sql = "INSERT INTO pages (id, name, address, type, urlKey, avatarUrl, cityName)
-	VALUES ('$id', '$name', '$address', '$type', '$urlkey', '$avatarurl', '$cityname');";
+	$sql = "INSERT INTO pages (id, name, address, type, urlKey, avatarUrl, cityName, description, instagramProfile, averageRating, reviewCount, phoneNumbers)
+	VALUES ('$id', '$name', '$address', '$type', '$urlkey', '$avatarurl', '$cityname', '$description', '$instagramProfile', '$averageRating', '$reviewCount', '$phoneNumbers');";
 
-	var_dump($sql);
+	// var_dump($sql);
 	// выполнение запроса
 	$result = $conn->query($sql);
 	if ($result) {
 		echo "Страница успешно сохранена в базу данных.";
 		echo "Страница успешно сохранена в базу данных.";
 	}
-	var_dump($result);
+	// var_dump($result);
 }
 	$conn->close();
 

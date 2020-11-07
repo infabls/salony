@@ -112,8 +112,8 @@
 		<?php echo $content; ?>
 	 </p>
                                                             <p>
-                                                                Phone: <a href="tel:+1234568910">+1(234) 567 89 10</a> <br/>
-                                                                Email: <a href="mailto:name@mail.com">name@mail.com</a> <br/>
+                                                                Телефон: <a href="tel:<?php echo($phoneNumbers); ?>"><?php echo($phoneNumbers); ?> </a> <br/>
+                                                                Instagram: <a target="_blank" href="https://www.instagram.com/<?php echo $instagramProfile ?>"><?php echo $instagramProfile; ?></a> <br/>
                                                                 Адрес: <?php echo $address; ?>
                                                             </p>
                                                         </div>
@@ -121,28 +121,19 @@
                                                     <div id="sc_skills_diagram_985" class="sc_skills sc_skills_bar sc_skills_horizontal" data-type="bar" data-caption="Skills" data-dir="horizontal">
                                                         <div class="sc_skills_item sc_skills_style_1">
                                                             <div class="sc_skills_count odd"></div>
-                                                            <div class="sc_skills_total" data-start="0" data-stop="95" data-step="1" data-max="100" data-speed="11" data-duration="1045" data-ed="">0</div>
+                                                            <div class="sc_skills_total" data-start="0" data-stop="<?php echo $reviewCount ?> " data-step="1" data-max="100" data-speed="11" data-duration="1045" data-ed="">0</div>
                                                         </div>
                                                         <div class="sc_skills_info">
-                                                            <div class="sc_skills_label">Stamina</div>
+                                                            <div class="sc_skills_label">Количество отзывов</div>
                                                         </div>
                                                         <div class="sc_skills_item sc_skills_style_1">
                                                             <div class="sc_skills_count even"></div>
-                                                            <div class="sc_skills_total" data-start="0" data-stop="75" data-step="1" data-max="100" data-speed="31" data-duration="2325" data-ed="">0</div>
+                                                            <div class="sc_skills_total" data-start="0" data-stop="<?php echo $averageRating; ?> " data-step="1" data-max="5" data-speed="31" data-duration="2325" data-ed="">0</div>
                                                         </div>
                                                         <div class="sc_skills_info">
-                                                            <div class="sc_skills_label">Concentration</div>
+                                                            <div class="sc_skills_label">Рейтинг</div>
                                                         </div>
-                                                        <div class="sc_skills_item sc_skills_style_1">
-                                                            <div class="sc_skills_count odd"></div>
-                                                            <div class="sc_skills_total" data-start="0" data-stop="82" data-step="1" data-max="100" data-speed="17" data-duration="1394" data-ed="">0</div>
-                                                        </div>
-                                                        <div class="sc_skills_info">
-                                                            <div class="sc_skills_label">Manual dexterity</div>
-                                                        </div>
-                                                        <p>Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные, тексты. Города за обеспечивает семантика всемогущая напоивший подзаголовок вопроса там послушавшись рекламных она подпоясал заголовок имени, наш предупреждал вершину дороге текстов?</p>
-                                                        <p>Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные, тексты. Города за обеспечивает семантика всемогущая напоивший подзаголовок вопроса там послушавшись рекламных она подпоясал заголовок имени, наш предупреждал вершину дороге текстов?</p>
-                                                        <p>Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные, тексты. Города за обеспечивает семантика всемогущая напоивший подзаголовок вопроса там послушавшись рекламных она подпоясал заголовок имени, наш предупреждал вершину дороге текстов?</p>
+                                                       <p><?php echo $description; ?></p>
                                                     </div>
                                                 </div>
                                             </div>

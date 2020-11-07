@@ -33,6 +33,11 @@ if ($result->num_rows > 0) {
     $address = $row['address'];
     $avatarUrl = $row['avatarUrl'];
     $cityName = $row['cityName'];
+    $description = $row['description'];
+    $instagramProfile = $row['instagramProfile'];
+    $averageRating = $row['averageRating'];
+    $reviewCount = $row['reviewCount'];
+    $phoneNumbers = $row['phoneNumbers'];
   }
   require '../template.php';
 }  
