@@ -38,6 +38,11 @@ if ($result->num_rows > 0) {
     $averageRating = $row['averageRating'];
     $reviewCount = $row['reviewCount'];
     $phoneNumbers = $row['phoneNumbers'];
+    $markerX = $row['markerX'];
+    $markerY = $row['markerY'];
+    $centerX = $row['centerX'];
+    $centerY = $row['centerY'];
+    $zoom = $row['zoom'];
   }
   require '../template.php';
 }  

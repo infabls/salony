@@ -34,11 +34,20 @@ for ($i=2; $i < $a; $i++) {
 	$reviewCount = $data['data']['firm']['reviewCount'];
 	// проверка на количество номеров
 	$phoneNumbers = $data['data']['firm']['phoneNumbers'][0];
-
+	$location = $data['data']['location'];
+	
+	// проверка на наличие локации в 2гис
+	if ($location['type'] == 'TWO_GIS') {	
+	$markerX = $location['markerX'];
+	$markerY = $location['markerY'];
+	$centerX = $location['centerX'];
+	$centerY = $location['centerY'];
+	$zoom = $location['zoom'];
+	}
 
 	// добавление данных в таблицу
-	$sql = "INSERT INTO pages (id, name, address, type, urlKey, avatarUrl, cityName, description, instagramProfile, averageRating, reviewCount, phoneNumbers)
-	VALUES ('$id', '$name', '$address', '$type', '$urlkey', '$avatarurl', '$cityname', '$description', '$instagramProfile', '$averageRating', '$reviewCount', '$phoneNumbers');";
+	$sql = "INSERT INTO pages (id, name, address, type, urlKey, avatarUrl, cityName, description, instagramProfile, averageRating, reviewCount, phoneNumbers, markerX, markerY, centerX, centerY, zoom)
+	VALUES ('$id', '$name', '$address', '$type', '$urlkey', '$avatarurl', '$cityname', '$description', '$instagramProfile', '$averageRating', '$reviewCount', '$phoneNumbers', '$markerX' ,'$markerY' ,'$centerX' ,'$centerY' ,'$zoom');";
 
 	// var_dump($sql);
 	// выполнение запроса

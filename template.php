@@ -141,7 +141,30 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sc_row-full-width"></div>
+                            <div class="sc_row-full-width">
+                                <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+                <div id="map" style="width:500px; height:400px"></div>
+                <script type="text/javascript">
+                var map;
+                DG.then(function () {
+                    map = DG.map('map', {
+                        center: [<?php echo $centerY; ?>, <?php echo $centerX; ?>],
+                        zoom: <?php echo $zoom; ?>
+                    });
+                    <?php 
+                        echo(
+                            'DG.marker([' . $markerY . ', ' . $markerX . ']).addTo(map).bindPopup(\'<a target="_blank" href="https://www.instagram.com/'.$instagramProfile.'">'.$name.'</a>\');'
+                        );
+                            
+                    ?>
+                    var popup = DG.popup()
+                        .setLatLng(latlng)
+                        .setContent('')
+                        .openOn(map);
+                    // DG.marker([49.965929, 82.583435]).addTo(map);
+                });
+            </script>
+                            </div>
                         </section>
                     </article>
                     <section class="related_wrap related_wrap_empty"></section>
