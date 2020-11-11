@@ -51,14 +51,14 @@
                         <div class="sc_section sc_section_block">
                             <div class="sc_section_inner">
                         <h6 class="sc_section_subtitle sc_item_subtitle">Our Experts</h6>
-                        <h2 class="sc_section_title sc_item_title line_hide">START YOUR TREATMENT TODAY!</h2>
+                        <h2 class="sc_section_title sc_item_title line_hide"><?php echo $title; ?></h2>
                             <div class="sc_section_content_wrap">
                                 <div id="sc_team_332_wrap" class="sc_team_wrap">
                                     <div id="sc_team_332" class="sc_team sc_team_style_team-3 aligncenter">
                     <div class="sc_columns columns_wrap">
 
 
-        	                                      			<?php 
+        	                                      		<?php 
 				// цикл вывода списка компаний
 				for ($i=0; $i < $company_count; $i++) { 
 					echo('	
@@ -66,16 +66,16 @@
 	
             <div id="sc_team_332_1" class="sc_team_item">
                 <div class="sc_team_item_avatar">
-                    <img alt="" src="images/370x370.jpg">
+                    <img alt="" src="https://zapis.kz'.$company_data[$i]['avatarUrl'].'">
                     <div class="sc_team_item_hover">
-                        <a href="single-team.html" class="sc_team_item_icon icon-email19"></a>
+                        <a href="'. $company_data[$i]['urlKey'] . ' " class="sc_team_item_icon icon-email19"></a>
                     </div>
                 </div>
                 <div class="sc_team_item_info">
                     <h5 class="sc_team_item_title">
                         <a href="'. $company_data[$i]['url'] .'">' . $company_data[$i]['title'] . '</a>
                     </h5>
-                    <div class="sc_team_item_position">Massagist</div>
+                    <div class="sc_team_item_position">'.$company_data[$i]['name'].'</div>
                 </div>
             </div>
 
@@ -83,6 +83,24 @@
                    ');
 				} 	
 			?>
+            <nav id="pagination" class="pagination_wrap pagination_pages">
+                        <?php $page = (intval($_GET['page'])); ?>
+                        <?php if (!isset($_GET['page'])): ?>
+                        <span class="pager_current active ">1</span>
+                        <a href="?page=2">2</a>
+                        <a href="?page=3">3</a>
+                        <a href="?page=2" class="pager_next "></a>
+<!--                         <a href="?page=" class="pager_last "></a>
+ -->                        <?php endif ?>
+                        <?php if (isset($_GET['page'])): ?>
+                            <a href="?page=<?php echo $page - 1 ?>" class="pager_prev "></a>
+                            <a href="?page=<?php echo $page -1; ?>"><?php echo $page -1; ?></a>
+                            <span class="pager_current active "><?php echo $page; ?></span>
+                            <a href="?page=<?php echo $page +1; ?>"><?php echo $page +1; ?></a>
+                            <a href="?page=<?php echo $page + 1; ?>" class="pager_next "></a>
+                            <!-- <a href="#" class="pager_last "></a> -->
+                        <?php endif ?>
+                    </nav>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -123,8 +141,32 @@
                                                 </div>
                                             </div>
                                             <div class="sc_empty_space em_height_10-5">
-                                                <span class="sc_empty_space_inner"></span>
+                                                <span class="sc_empty_space_inner">
+                                                </span>
                                             </div>
+                                        <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+                <div id="map" style="width:500px; height:400px"></div>
+                <script type="text/javascript">
+                var map;
+                DG.then(function () {
+                    map = DG.map('map', {
+                        center: [43.223976, 76.953636],
+                        zoom: 11
+                    });
+                    <?php 
+                        for ($i=0; $i < $company_count; $i++) { 
+                        echo(
+                            'DG.marker([' . $company_data[$i]['markerY'] . ', ' . $company_data[$i]['markerX'] . ']).addTo(map).bindPopup(\'<a target="_blank" href="https://www.instagram.com/'.$company_data[$i]['instagramProfile'].'">'.$company_data[$i]['name'].'</a>\');'
+                        );
+                        }
+                    ?>
+                    var popup = DG.popup()
+                        .setLatLng(latlng)
+                        .setContent('')
+                        .openOn(map);
+                    // DG.marker([49.965929, 82.583435]).addTo(map);
+                });
+            </script>
                                         </div>
                                     </div>
                                 </div>

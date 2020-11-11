@@ -60,7 +60,11 @@ if ($result2->num_rows > 0) {
     $pagetype = $row['pagetype'];
   }
   // выборка всех компаний в категории
-  $sql3 = "SELECT * FROM companies WHERE cat_id = '$id'";
+  $start = 0;
+  if (isset($_GET['page'])) {
+    $start = intval($_GET['page']);
+  }
+  $sql3 = "SELECT * FROM pages LiMIT $start,20";
   $result3 = $conn->query($sql3);
   $conn->close();
   // количество компаний в категории

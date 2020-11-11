@@ -7,4 +7,4 @@ $password = "root";
 $dbname = "salony";
 $base_uri = "http://salony/";
 $db_uri = "http://360gis";
-$url = $db_uri . $_SERVER['REQUEST_URI'];
+$url = $db_uri . strtok($_SERVER["REQUEST_URI"], '?');
